@@ -1,5 +1,6 @@
 import pygame
 import random
+from ship import Ship
 
 pygame.init()
 
@@ -12,6 +13,7 @@ pygame.display.set_caption("Alien Invasion")
 clock = pygame.time.Clock()
 
 dots = [(random.randint(0, SCREEN_WIDTH), random.randint(0, SCREEN_HEIGHT)) for _ in range(DOT_COUNT)]
+ship = Ship(screen)
 
 running = True
 while running:
@@ -22,6 +24,8 @@ while running:
     screen.fill((0, 0, 0))
     for x, y in dots:
         pygame.draw.circle(screen, (255, 255, 255), (x, y), 2)
+
+    ship.blitme()
 
     pygame.display.flip()
     clock.tick(FPS)
