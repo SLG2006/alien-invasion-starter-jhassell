@@ -1,9 +1,9 @@
 import pygame
 
 class Bullet(pygame.sprite.Sprite):
-    def __init__(self, ship):
+    def __init__(self, ship, settings):
         super().__init__()
-        self.speed = 10
+        self.speed = settings.bullet_speed
 
         self.image = pygame.Surface((4, 20), pygame.SRCALPHA)
         pygame.draw.rect(self.image, (180, 0,   0),   (0, 0, 4, 20))  # outer beam
