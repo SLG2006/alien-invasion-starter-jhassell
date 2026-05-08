@@ -19,6 +19,7 @@ class Settings:
         self.alien_bullet_speed = 5.0
         self.alien_shoot_chance = 0.015
         self.fleet_direction = 1
+        self.bullets_allowed = 3
 
     def increase_speed(self):
         self.ship_speed *= self.speedup_scale
